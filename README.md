@@ -4,7 +4,7 @@ Small Docker image for Pelican/Pterodactyl Minecraft servers using GraalVM Commu
 
 ## What it is
 
-- Base image: `ghcr.io/graalvm/jdk-community:21`
+- Base image: `ghcr.io/graalvm/jdk-community:21-ol9`
 - Runtime: standard JVM with Graal JIT
 - Intended use: Java 21 Minecraft servers on Pelican or Pterodactyl
 

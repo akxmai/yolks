@@ -1,10 +1,10 @@
-FROM --platform=$TARGETOS/$TARGETARCH ghcr.io/graalvm/jdk-community:21
+FROM --platform=$TARGETOS/$TARGETARCH ghcr.io/graalvm/jdk-community:21-ol9
 
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 LABEL org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
 LABEL org.opencontainers.image.licenses="MIT"
 
-RUN dnf install -y \
+RUN microdnf install -y \
         curl \
         lsof \
         ca-certificates \
@@ -21,7 +21,7 @@ RUN dnf install -y \
         zip \
         unzip \
         jq \
-    && dnf clean all
+    && microdnf clean all
 
 RUN useradd -m -d /home/container -s /bin/bash container
 USER container
