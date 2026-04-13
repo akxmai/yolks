@@ -17,7 +17,6 @@ RUN microdnf install -y \
         iproute \
         freetype \
         redis \
-        tini \
         zip \
         unzip \
         jq \
@@ -33,5 +32,4 @@ STOPSIGNAL SIGINT
 COPY --chown=container:container entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/usr/bin/tini", "-g", "--"]
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
